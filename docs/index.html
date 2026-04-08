@@ -496,7 +496,7 @@
         <h3>Local Server</h3>
         <div class="port-info">
           Port 8080 →
-          <a href="../bmad_v4/index.html" target="_blank">
+          <a href="bmad_v4/index.html" target="_blank">
             127.0.0.1:8080
           </a>
         </div>
@@ -541,7 +541,7 @@
         <h3>Local Server</h3>
         <div class="port-info">
           Port 8081 →
-          <a href="../traycer/index.html" target="_blank">
+          <a href="traycer/index.html" target="_blank">
             127.0.0.1:8081
           </a>
         </div>
@@ -588,7 +588,7 @@
         <h3>Local Server</h3>
         <div class="port-info">
           Port 8082 →
-          <a href="../amp/index.html" target="_blank">
+          <a href="amp/index.html" target="_blank">
             127.0.0.1:8082
           </a>
         </div>
@@ -635,7 +635,7 @@
         <h3>Local Server</h3>
         <div class="port-info">
           Port 8083 →
-          <a href="../superpowers/index.html" target="_blank">
+          <a href="superpowers/index.html" target="_blank">
             127.0.0.1:8083
           </a>
         </div>
@@ -680,7 +680,7 @@
         <h3>Local Server</h3>
         <div class="port-info">
           Port 8084 →
-          <a href="../ralph/index.html" target="_blank">
+          <a href="ralph/index.html" target="_blank">
             127.0.0.1:8084
           </a>
         </div>
@@ -727,7 +727,7 @@
         <h3>Local Server</h3>
         <div class="port-info">
           Port 8085 →
-          <a href="../bmad_v6/index.html" target="_blank">
+          <a href="bmad_v6/index.html" target="_blank">
             127.0.0.1:8085
           </a>
         </div>
@@ -740,7 +740,7 @@
   <!-- Preview pane -->
   <div class="preview-pane" id="previewPane">
     <div class="preview-header">
-      <span class="preview-url" id="previewUrl">../bmad_v4/index.html</span>
+      <span class="preview-url" id="previewUrl">bmad_v4/index.html</span>
       <div style="display:flex; gap:8px; align-items:center">
         <div class="view-toggle">
           <button class="view-btn active" onclick="setView('single')" id="btnSingle">Single</button>
@@ -752,7 +752,7 @@
 
     <!-- Single view -->
     <div id="singleView" style="display:flex; flex:1; flex-direction:column;">
-      <iframe id="mainFrame" src="../bmad_v4/index.html"
+      <iframe id="mainFrame" src="bmad_v4/index.html"
               onerror="markOffline()"
               onload="markOnline()"></iframe>
     </div>
@@ -765,7 +765,7 @@
           <span style="color:#6366f1">BMAD v4</span>
           <span style="color:#71717a; font-family:'Space Mono',monospace">30/40</span>
         </div>
-        <iframe src="../bmad_v4/index.html"
+        <iframe src="bmad_v4/index.html"
                 title="BMAD v4"></iframe>
       </div>
       
@@ -774,7 +774,7 @@
           <span style="color:#0ea5e9">Traycer.ai</span>
           <span style="color:#71717a; font-family:'Space Mono',monospace">32/40</span>
         </div>
-        <iframe src="../traycer/index.html"
+        <iframe src="traycer/index.html"
                 title="Traycer.ai"></iframe>
       </div>
       
@@ -783,7 +783,7 @@
           <span style="color:#10b981">Amp</span>
           <span style="color:#71717a; font-family:'Space Mono',monospace">32/40</span>
         </div>
-        <iframe src="../amp/index.html"
+        <iframe src="amp/index.html"
                 title="Amp"></iframe>
       </div>
       
@@ -792,7 +792,7 @@
           <span style="color:#f59e0b">Superpowers</span>
           <span style="color:#71717a; font-family:'Space Mono',monospace">35/40</span>
         </div>
-        <iframe src="../superpowers/index.html"
+        <iframe src="superpowers/index.html"
                 title="Superpowers"></iframe>
       </div>
       
@@ -801,7 +801,7 @@
           <span style="color:#ef4444">Ralph</span>
           <span style="color:#71717a; font-family:'Space Mono',monospace">8/40</span>
         </div>
-        <iframe src="../ralph/index.html"
+        <iframe src="ralph/index.html"
                 title="Ralph"></iframe>
       </div>
       
@@ -810,7 +810,7 @@
           <span style="color:#8b5cf6">BMAD v6</span>
           <span style="color:#71717a; font-family:'Space Mono',monospace">30/40</span>
         </div>
-        <iframe src="../bmad_v6/index.html"
+        <iframe src="bmad_v6/index.html"
                 title="BMAD v6"></iframe>
       </div>
       
@@ -819,7 +819,7 @@
 </div>
 
 <script>
-  const tools = [{"color": "#6366f1", "id": "bmad_v4", "name": "BMAD v4", "port": 8080, "score": 30, "staticUrl": "../bmad_v4/index.html", "subtitle": "GitHub Copilot + BMAD Method", "tags": ["Copilot", "No API cost"], "verdict": "Solid baseline. Best dark UI but needed 3 manual fixes before running."}, {"color": "#0ea5e9", "id": "traycer", "name": "Traycer.ai", "port": 8081, "score": 32, "staticUrl": "../traycer/index.html", "subtitle": "Traycer + Claude Code", "tags": ["Claude Code", "Best planning"], "verdict": "Best pre-build review \u2014 caught division-by-zero. API reliability issues hurt."}, {"color": "#10b981", "id": "amp", "name": "Amp", "port": 8082, "score": 32, "staticUrl": "../amp/index.html", "subtitle": "Amp terminal agent", "tags": ["$0.20", "Fastest", "Self-tested"], "verdict": "Fastest at 3\u20135 min for $0.20. Self-tested output. Plain frontend."}, {"color": "#f59e0b", "id": "superpowers", "name": "Superpowers", "port": 8083, "score": 35, "staticUrl": "../superpowers/index.html", "subtitle": "Superpowers + Claude Code", "tags": ["Claude Code", "TDD", "Best output"], "verdict": "Best output \u2014 sortable table, 11 unit tests, 4 bugs self-caught. Slowest."}, {"color": "#ef4444", "id": "ralph", "name": "Ralph", "port": 8084, "score": 8, "staticUrl": "../ralph/index.html", "subtitle": "Ralph + Claude Code", "tags": ["Claude Code", "Autonomous loop"], "verdict": "Circuit breaker opened \u2014 never produced a working app. Wrong tool for this."}, {"color": "#8b5cf6", "id": "bmad_v6", "name": "BMAD v6", "port": 8085, "score": 30, "staticUrl": "../bmad_v6/index.html", "subtitle": "BMAD v6 + Copilot (Claude Sonnet 4.6)", "tags": ["Copilot", "No API cost", "Agent mode"], "verdict": "Zero cost upgrade over v4. Autonomous error recovery. No sortable columns."}];
+  const tools = [{"color": "#6366f1", "id": "bmad_v4", "name": "BMAD v4", "port": 8080, "score": 30, "staticUrl": "bmad_v4/index.html", "subtitle": "GitHub Copilot + BMAD Method", "tags": ["Copilot", "No API cost"], "verdict": "Solid baseline. Best dark UI but needed 3 manual fixes before running."}, {"color": "#0ea5e9", "id": "traycer", "name": "Traycer.ai", "port": 8081, "score": 32, "staticUrl": "traycer/index.html", "subtitle": "Traycer + Claude Code", "tags": ["Claude Code", "Best planning"], "verdict": "Best pre-build review \u2014 caught division-by-zero. API reliability issues hurt."}, {"color": "#10b981", "id": "amp", "name": "Amp", "port": 8082, "score": 32, "staticUrl": "amp/index.html", "subtitle": "Amp terminal agent", "tags": ["$0.20", "Fastest", "Self-tested"], "verdict": "Fastest at 3\u20135 min for $0.20. Self-tested output. Plain frontend."}, {"color": "#f59e0b", "id": "superpowers", "name": "Superpowers", "port": 8083, "score": 35, "staticUrl": "superpowers/index.html", "subtitle": "Superpowers + Claude Code", "tags": ["Claude Code", "TDD", "Best output"], "verdict": "Best output \u2014 sortable table, 11 unit tests, 4 bugs self-caught. Slowest."}, {"color": "#ef4444", "id": "ralph", "name": "Ralph", "port": 8084, "score": 8, "staticUrl": "ralph/index.html", "subtitle": "Ralph + Claude Code", "tags": ["Claude Code", "Autonomous loop"], "verdict": "Circuit breaker opened \u2014 never produced a working app. Wrong tool for this."}, {"color": "#8b5cf6", "id": "bmad_v6", "name": "BMAD v6", "port": 8085, "score": 30, "staticUrl": "bmad_v6/index.html", "subtitle": "BMAD v6 + Copilot (Claude Sonnet 4.6)", "tags": ["Copilot", "No API cost", "Agent mode"], "verdict": "Zero cost upgrade over v4. Autonomous error recovery. No sortable columns."}];
 
   const CRITERIA = [
     'Planning', 'Speed', 'Data Handling',

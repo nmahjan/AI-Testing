@@ -52,7 +52,7 @@ def render_switcher(port_to_id):
 
     # Inject staticUrl into every tool dict so JS can use it
     for t in tools:
-        t["staticUrl"] = f"../{t['id']}/index.html"
+        t["staticUrl"] = f"{t['id']}/index.html"
 
     # Render Jinja2 template (Flask needed for tojson filter)
     from flask import Flask
@@ -65,7 +65,7 @@ def render_switcher(port_to_id):
     for port, tool_id in port_to_id.items():
         rendered = rendered.replace(
             f"http://127.0.0.1:{port}",
-            f"../{tool_id}/index.html"
+            f"{tool_id}/index.html"
         )
 
     # Patch JS selectTool — use staticUrl instead of building localhost URL
@@ -77,7 +77,7 @@ def render_switcher(port_to_id):
     # Update the initial previewUrl text
     rendered = rendered.replace(
         ">http://127.0.0.1:8080<",
-        ">../bmad_v4/index.html<"
+        ">bmad_v4/index.html<"
     )
 
     return rendered
