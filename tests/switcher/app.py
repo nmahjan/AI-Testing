@@ -442,9 +442,38 @@ HTML = """
 
     /* ── Responsive ── */
     @media (max-width: 900px) {
-      .main { grid-template-columns: 1fr; }
-      .sidebar { border-right: none; border-bottom: 1px solid var(--border); max-height: 300px; }
+      .main { grid-template-columns: 1fr; height: auto; }
+      .sidebar { border-right: none; border-bottom: 1px solid var(--border); max-height: none; }
       .compare-grid { grid-template-columns: 1fr; }
+      iframe { min-height: 420px; }
+      .compare-cell iframe { min-height: 320px; }
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 12px 16px; flex-wrap: wrap; gap: 6px; }
+      .logo { font-size: 0.75rem; }
+      .header-meta { font-size: 0.65rem; }
+
+      .tool-nav { padding: 10px 12px; gap: 6px; }
+      .tool-tab { min-width: 100px; padding: 8px 10px; }
+      .tab-name { font-size: 0.8rem; }
+      .tab-score { font-size: 0.68rem; }
+
+      .sidebar { padding: 16px; gap: 14px; }
+      .score-big { font-size: 2rem; }
+      .tool-title { font-size: 1.1rem; }
+      .criteria-label { width: 90px; font-size: 0.7rem; }
+
+      .preview-header { padding: 8px 12px; flex-wrap: wrap; gap: 6px; }
+      .preview-url { font-size: 0.65rem; word-break: break-all; }
+      .view-btn { padding: 4px 8px; font-size: 0.7rem; }
+      .preview-status { font-size: 0.65rem; }
+
+      iframe { min-height: 360px; }
+      .compare-grid { grid-template-columns: 1fr; }
+      .compare-cell iframe { min-height: 280px; }
+
+      .main { height: auto; }
     }
   </style>
 </head>
@@ -618,13 +647,14 @@ HTML = """
 
   function setView(view) {
     currentView = view;
+    const isMobile = window.innerWidth <= 900;
     if (view === 'single') {
       document.getElementById('singleView').style.display = 'flex';
       document.getElementById('compareView').style.display = 'none';
       document.getElementById('sidebar').style.display = 'flex';
       document.getElementById('btnSingle').classList.add('active');
       document.getElementById('btnCompare').classList.remove('active');
-      document.getElementById('mainLayout').style.gridTemplateColumns = '320px 1fr';
+      document.getElementById('mainLayout').style.gridTemplateColumns = isMobile ? '1fr' : '320px 1fr';
     } else {
       document.getElementById('singleView').style.display = 'none';
       document.getElementById('compareView').style.display = 'grid';
@@ -634,6 +664,13 @@ HTML = """
       document.getElementById('mainLayout').style.gridTemplateColumns = '1fr';
     }
   }
+
+  window.addEventListener('resize', () => {
+    if (currentView === 'single') {
+      document.getElementById('mainLayout').style.gridTemplateColumns =
+        window.innerWidth <= 900 ? '1fr' : '320px 1fr';
+    }
+  });
 
   function markOnline() {
     const el = document.getElementById('previewStatus');

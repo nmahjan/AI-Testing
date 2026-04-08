@@ -8,18 +8,24 @@ HTML = """
 <html>
 <head>
     <title>Basketball Stats</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
         h1 { color: #333; }
+        .table-wrapper { overflow-x: auto; }
         table { border-collapse: collapse; width: 100%; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         th { background: #2c3e50; color: white; padding: 10px 12px; text-align: left; font-size: 13px; }
         td { padding: 9px 12px; border-bottom: 1px solid #ddd; font-size: 13px; }
         tr:hover { filter: brightness(0.96); }
         .top { background: #c8f7c5; }
         .bottom { background: #f7c5c5; }
-        .legend { margin: 16px 0; display: flex; gap: 20px; }
+        .legend { margin: 16px 0; display: flex; gap: 20px; flex-wrap: wrap; }
         .legend-item { display: flex; align-items: center; gap: 8px; font-size: 13px; }
         .swatch { width: 18px; height: 18px; border-radius: 3px; }
+        @media (max-width: 600px) {
+          body { padding: 12px 8px; }
+          th, td { padding: 6px 8px; font-size: 11px; }
+        }
     </style>
 </head>
 <body>
@@ -28,6 +34,7 @@ HTML = """
         <div class="legend-item"><div class="swatch" style="background:#c8f7c5"></div>Top 3 PER</div>
         <div class="legend-item"><div class="swatch" style="background:#f7c5c5"></div>Bottom 3 PER</div>
     </div>
+    <div class="table-wrapper">
     <table>
         <thead>
             <tr>{% for col in columns %}<th>{{ col }}</th>{% endfor %}</tr>
@@ -40,6 +47,7 @@ HTML = """
             {% endfor %}
         </tbody>
     </table>
+    </div>
 </body>
 </html>
 """

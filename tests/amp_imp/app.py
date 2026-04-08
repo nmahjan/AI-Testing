@@ -8,6 +8,7 @@ HTML_TEMPLATE = """
 <html>
 <head>
     <title>Basketball Stats</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
         h1 { text-align: center; }
@@ -17,10 +18,17 @@ HTML_TEMPLATE = """
         tr:nth-child(even) { background: #f9f9f9; }
         tr.top { background: #c6efce; }
         tr.bottom { background: #ffc7ce; }
+        .table-wrapper { overflow-x: auto; }
+        @media (max-width: 600px) {
+          body { margin: 16px 8px; }
+          h1 { font-size: 1.2rem; }
+          th, td { padding: 6px 6px; font-size: 0.75rem; }
+        }
     </style>
 </head>
 <body>
     <h1>Basketball Player Stats</h1>
+    <div class="table-wrapper">
     <table>
         <tr>
             {% for col in columns %}
@@ -35,6 +43,7 @@ HTML_TEMPLATE = """
         </tr>
         {% endfor %}
     </table>
+    </div>
 </body>
 </html>
 """
